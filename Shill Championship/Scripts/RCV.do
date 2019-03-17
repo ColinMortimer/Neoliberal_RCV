@@ -17,7 +17,7 @@ global output "$dir/../Output"
 global temp "$dir/../Temp"
 
 * Import vote data
-import delimited "$data/Data_3.csv", varnames(1)
+import delimited "$data/Data_5.csv", varnames(1)
 
 * Drop uneeded variables
 drop timestamp
