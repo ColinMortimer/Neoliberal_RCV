@@ -52,8 +52,9 @@ tab firstchoice
 gen one = 1
 collapse (count) one, by(firstchoice)
 gsort -one
-global drop = firstchoice[3]
+global drop = firstchoice[_n]
 use "$temp/Pre_collapse.dta", clear
+tab secondchoice if firstchoice == "`drop'"
 replace firstchoice = secondchoice if firstchoice == "`drop'"
 
 * Calculate winner
